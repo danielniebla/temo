@@ -5,29 +5,29 @@
 <div class="flex">
     <div class="play">
         <h1>Playground</h1>
-        <div class="if">
-            <p>if (condicion)</p>
-            <p>{{'{'}}</p>
-            <p>codigo</p>
-            <p>{{'}'}}</p>
+        <div class="if" (click)="si()">
+            <h2>IF</h2>
+            <p>si (condicion){{'{'}}codigo{{'}'}}</p>
         </div>
-        <div class="sino">
-            <p>sino</p>
-            <p>{{'{'}}</p>
-            <p>codigo</p>
-            <p>{{'}'}}</p>
+        <div class="sino" (click)="sino()">
+            <h2>ELSE</h2>
+            <p>sino{{'{'}}codigo{{'}'}}</p>
         </div>
-        <div class="para">
-            <p>para(condicion)</p>
-            <p>{{'{'}}</p>
-            <p>codigo</p>
-            <p>{{'}'}}</p>
+        <div class="para" (click)="para()">
+            <h2>FOR</h2>
+            <p>para(condicion){{'{'}}codigo{{'}'}}</p>
         </div>
-        <div class="mientras">
-            <p>mientras(condicion)</p>
-            <p>{{'{'}}</p>
-            <p>codigo</p>
-            <p>{{'}'}}</p>
+        <div class="mientras" (click)="mientras()">
+            <h2>WHILE</h2>
+            <p>mientras(condicion){{'{'}}codigo{{'}'}}</p>
+        </div>
+        <div class="escribir" (click)="print()">
+            <h2>PRINT</h2>
+            <p>escribir(texto en pantalla);</p>
+        </div>
+        <div class="asignacion" (click)="asignacion()">
+            <H2>ASIGNACION</H2>
+            <p>variable:=1;</p>
         </div>
     </div>
     <div class="space">

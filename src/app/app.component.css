@@ -22,7 +22,7 @@ img{
     height: 30px;
     margin: auto;
 }
-p{
+p, h2{
     padding: 0;
     margin: 0;
 }

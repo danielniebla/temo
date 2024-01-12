@@ -33,4 +33,22 @@ export class AppComponent {
         console.error('Error:', error);
       });
   }
+  si(){
+    this.code = this.code + 'si(condicion){codigo}';
+  }
+  sino(){
+    this.code = this.code + 'sino{codigo}';
+  }
+  para(){
+    this.code = this.code + 'para(condicion){codigo}';
+  }
+  mientras(){
+    this.code = this.code + 'mietras(condicion){codigo}';
+  }
+  print(){
+    this.code = this.code + 'print(variable);';
+  }
+  asignacion(){
+    this.code = this.code + `variable:='a';`;
+  }
 }
