@@ -1,0 +1,11 @@
+.out{
+    background-color: #06283D;
+    width: 100%;
+    height: 30vh;
+}
+textarea{
+    width: 100%;
+    height: 30vh;
+    background-color: transparent;
+    color: white;
+}
