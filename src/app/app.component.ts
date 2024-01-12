@@ -35,28 +35,22 @@ export class AppComponent {
       );
   }
   si(){
-    this.code = this.code + 'si(condicion){codigo}';
-  }
-  sino(){
-    this.code = this.code + 'sino{codigo}';
+    this.code = `#importar <errno.h>  #importar <unistd.h>  #importar <stdio.h>  #importar <string.h>  #importar <stdlib.h>  #importar <signal.h>  #importar <pthread.h>   int a;  int b;      int main()  {	 b = 0;	 a = 2; 	 si ((a < 2))  	 { 		 a = 2; 	 } 	 sino 	 { 	 si(a==2) 	 { 			 a=a+2; 	 } 	 } 	 EscribirF(a); 		 b = 2; 		 	 EscribirF(b); 	 Escribir(a*b); 	 	 retornar 1;  }`;
   }
   para(){
-    this.code = this.code + 'para(condicion){codigo}';
+    this.code =`#importar <errno.h>  #importar <unistd.h>  #importar <stdio.h>  #importar <string.h>  #importar <stdlib.h>  #importar <signal.h>  #importar <pthread.h>   int a;  int n;  int main()  { 	 a = 0; 	 n=3; 	 para(a=0;a<n;a=a+1;) 	 { 	  EscribirF(a) } 	   retornar 1;  }`;
   }
   mientras(){
-    this.code = this.code + 'mietras(condicion){codigo}';
+    this.code =  '#importar <errno.h>  #importar <unistd.h>  #importar <stdio.h>  #importar <string.h>  #importar <stdlib.h>  #importar <signal.h>  #importar <pthread.h>    int i;   int main()  { 	 i=0; mientras(i<5) 	 { 	 i=i+1; 	 } 	 EscribirF(i); 	 	 return 1;  }';
   }
   print(){
-    this.code = this.code + 'print(variable);';
+    this.code =  `#importar <errno.h>  #importar <unistd.h>  #importar <stdio.h>  #importar <string.h>  #importar <stdlib.h>  #importar <signal.h>  #importar <pthread.h>    char x;   int main()  { 	  x = 'c'; 	 EscribirF(x);   return 1;  }`;
   }
   asignacion(){
-    this.code = this.code + `variable:='a';`;
+    this.code =  `#importar <errno.h>  #importar <unistd.h>  #importar <stdio.h>  #importar <string.h>  #importar <stdlib.h>  #importar <signal.h>  #importar <pthread.h>   int a;  int b;  int main()  { 	  a=56; EscribirF(a); 	 b = 2; 	 int d; 	 d = a*b; 	 EscribirF(b); 	 Escribir(d); 	 return 1;  }`;
   }
   int(){
-    this.code = this.code + `int a;`;
-  }
-  base(){
-    this.code = this.code + `#importar <stdio.h> int main(){codigo}`;
+    this.code =  `#importar <errno.h>  #importar <unistd.h>  #importar <stdio.h>  #importar <string.h>  #importar <stdlib.h>  #importar <signal.h>  #importar <pthread.h>   int a;    int main()  { 	  a=56; EscribirF(a); 	 return 1;  }`;
   }
   stop(){
     this.code = '';
