@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class AppComponent {
   constructor(private http: HttpClient) { }
   code = '';
+  output='';
   codification(){
     window.alert('-'+ this.code +'-');
     const authEndpoint = `http://127.0.0.1:8000/ejecutar_programa?codigo=${this.code}`;
@@ -27,7 +28,7 @@ export class AppComponent {
     // Realizar la solicitud POST para obtener el token
     this.http.post(authEndpoint,  httpOptions)
       .subscribe((response: any) => {
-
+        response.resultado=this.output;
       }, (error) => {
         console.error('Error:', error);
       });
