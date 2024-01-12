@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -16,23 +16,24 @@ export class AppComponent {
   code = '';
   output='';
   codification(){
-    window.alert('-'+ this.code +'-');
-    const authEndpoint = `http://127.0.0.1:8000/ejecutar_programa?codigo=${this.code}`;
-    // Encabezados para la solicitud POST
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    };
+    const url = 'http://127.0.0.1:8000/ejecutar_programa';
 
-    // Realizar la solicitud POST para obtener el token
-    this.http.post(authEndpoint,  httpOptions)
-      .subscribe((response: any) => {
-        response.resultado=this.output;
-      }, (error) => {
+    const params = new HttpParams()
+      .set('codigo', this.code);
+
+    this.http.get(url, { params }).subscribe(
+      (response: any) => {
+        if (response && response.resultado) {
+          this.output = response.resultado
+        } else {
+          console.error('Error:', response);
+        }
+      },
+      (error) => {
         console.error('Error:', error);
-      });
-  }
+      }
+      );
+  }
   si(){
     this.code = this.code + 'si(condicion){codigo}';
   }
