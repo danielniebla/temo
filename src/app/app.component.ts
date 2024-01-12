@@ -52,4 +52,14 @@ export class AppComponent {
   asignacion(){
     this.code = this.code + `variable:='a';`;
   }
+  int(){
+    this.code = this.code + `int a;`;
+  }
+  base(){
+    this.code = this.code + `#importar <stdio.h> int main(){codigo}`;
+  }
+  stop(){
+    this.code = '';
+    this.output = '';
+  }
 }
