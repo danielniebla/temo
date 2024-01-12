@@ -1,6 +1,39 @@
-<app-header></app-header>
-<div class="flex">
-    <app-playground></app-playground>
-    <app-space></app-space>
+<div class="head">
+    <img src="../../assets/boton-de-play.png" alt="" (click)="codification()" >
+    <img src="../../assets/boton-detener.png" alt="">
 </div>
-<app-output></app-output>
+<div class="flex">
+    <div class="play">
+        <h1>Playground</h1>
+        <div class="if">
+            <p>if (condicion)</p>
+            <p>{{'{'}}</p>
+            <p>codigo</p>
+            <p>{{'}'}}</p>
+        </div>
+        <div class="sino">
+            <p>sino</p>
+            <p>{{'{'}}</p>
+            <p>codigo</p>
+            <p>{{'}'}}</p>
+        </div>
+        <div class="para">
+            <p>para(condicion)</p>
+            <p>{{'{'}}</p>
+            <p>codigo</p>
+            <p>{{'}'}}</p>
+        </div>
+        <div class="mientras">
+            <p>mientras(condicion)</p>
+            <p>{{'{'}}</p>
+            <p>codigo</p>
+            <p>{{'}'}}</p>
+        </div>
+    </div>
+    <div class="space">
+        <textarea class="code" name="space" [(ngModel)]="code"></textarea>
+    </div>
+</div>
+<div class="out">
+    <textarea class="output" name="output" ></textarea>
+</div>

@@ -1,18 +1,35 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { SpaceComponent } from './space/space.component';
-import { PlaygroundComponent } from './playground/playground.component';
-import { OutputComponent } from './output/output.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, SpaceComponent, PlaygroundComponent, OutputComponent],
+  imports: [CommonModule,FormsModule, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'temo-playground';
+  constructor(private http: HttpClient) { }
+  code = '';
+  codification(){
+    window.alert('-'+ this.code +'-');
+    const authEndpoint = `http://127.0.0.1:8000/ejecutar_programa?codigo=${this.code}`;
+    // Encabezados para la solicitud POST
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    // Realizar la solicitud POST para obtener el token
+    this.http.post(authEndpoint,  httpOptions)
+      .subscribe((response: any) => {
+
+      }, (error) => {
+        console.error('Error:', error);
+      });
+  }
 }
